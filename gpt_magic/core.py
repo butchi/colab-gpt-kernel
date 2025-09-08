@@ -8,7 +8,7 @@ messages = []
 # Markdown形式での出力を求めるプロンプト
 SYSTEM_PROMPT = (
     "You are a technical writer. Return ONLY valid GitHub-flavored Markdown.\n"
-    "Inline math should be in $...$ and block math should be in $$...$$."
+    "Inline math should be in $ $ and block math should be in $$ $$."
 )
 
 def register_gpt_magic():
