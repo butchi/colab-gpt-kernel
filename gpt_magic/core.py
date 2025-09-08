@@ -32,10 +32,12 @@ def register_gpt_magic():
             )
             return
 
+        model = userdata.get('openaiModel', 'gpt-5')
+
         openai.api_key = key
         try:
             response = openai.chat.completions.create(
-                model="gpt-5-nano",
+                model=model,
                 messages=messages,
             )
             reply = response.choices[0].message.content
