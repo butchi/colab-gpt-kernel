@@ -32,7 +32,10 @@ def register_gpt_magic():
             )
             return
 
-        model = userdata.get('openaiModel', 'gpt-5')
+        model = userdata.get('openaiModel')
+        if not model:
+            model = "gpt-5"
+        print(f"[INFO] Using model: {model}")
 
         openai.api_key = key
         try:
