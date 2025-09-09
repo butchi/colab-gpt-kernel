@@ -32,10 +32,12 @@ def register_gpt_magic():
             )
             return
 
-        model = userdata.get('openaiModel')
-        if not model:
+        try:
+            model = userdata.get('openaiModel')
+            print(f"[INFO] Using model: {model}")
+        except Exception:
             model = "gpt-5"
-        print(f"[INFO] Using model: {model}")
+            print(f"[INFO] Using model: {model} (default)")
 
         openai.api_key = key
         try:
